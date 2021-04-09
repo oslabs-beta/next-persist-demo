@@ -2,42 +2,46 @@ import * as types from '../constants/actionTypes';
 
 const initialState = {
   counter: 0,
-  lightSwitch: false,
+  lightStatus: false,
   initialTime: new Date(),
+  currentTime: new Date(),
   username: 'Guest',
   userImage: 'guest.png',
 };
 
 const demoReducer = (state = initialState, action) => {
   let counter;
-  let lightSwitch;
+  let lightStatus;
   let initialTime;
+  let currentTime;
   let username;
   let userImage;
 
   switch (action.type) {
-    case types.INCREASE_COUNTER:
-      console.log('Increased Counter');
-      return state;
+    case types.UPDATE_COUNTER:
+      const change = action.payload;
+      counter = state.counter + change;
+      return {
+        ...state,
+        counter,
+      };
 
-    case types.DECREASE_COUNTER:
-      console.log('Increased Counter');
-      return state;
+    case types.UPDATE_LIGHT_STATUS:
+      lightStatus = action.payload;
+      return {
+        ...state,
+        lightStatus,
+      };
 
-    case types.SWITCH_ON:
-      console.log('Switch On');
-      return state;
-
-    case types.SWITCH_OFF:
-      console.log('Switch Off');
-      return state;
+    case types.TICK:
+      currentTime = action.payload;
+      return {
+        ...state,
+        currentTime,
+      };
 
     case types.RESTART_TIME:
       console.log('Restart Time');
-      return state;
-
-    case types.TICK:
-      console.log('Tick');
       return state;
 
     case types.UPDATE_USERNAME:
