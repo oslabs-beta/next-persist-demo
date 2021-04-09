@@ -1,62 +1,42 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Link from 'next/link';
-import { connect } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 import { Counter, LightSwitch, Timer, UserInfo } from '../components';
-import actions from '../redux/actions/actions';
 
-const mapStateToProps = (store) => ({
-  counter: store.counter,
-  lightSwitch: store.lightSwitch,
-  initialTime: store.initialTime,
-  username: store.username,
-  userImage: store.userImage,
-});
+export default function DemoContainer() {
+  const {
+    counter,
+    lightStatus,
+    initialTime,
+    currentTime,
+    username,
+    userImage,
+  } = useSelector((state) => state);
 
-const mapDispatchToProps = (dispatch) => ({
-  // increaseCounter: (e) => {
-  //   dispatch(actions.increaseCounter());
-  // },
-  // decreaseCounter: (e) => {
-  //   dispatch(actions.decreaseCounter());
-  // },
-});
-
-class DemoContainer extends Component {
-  render() {
-    return (
-      <div>
-        <h2>This is the Demo Container</h2>
-        <Link href="/counter">
-          <a>
-            <Counter
-              counter={this.props.counter}
-              // increaseCounter={this.props.increaseCounter}
-              // decreaseCounter={this.props.decreaseCounter}
-            />
-          </a>
-        </Link>
-        <Link href="/lightswitch">
-          <a>
-            <LightSwitch lightSwitch={this.props.lightSwitch} />
-          </a>
-        </Link>
-        <Link href="/timer">
-          <a>
-            <Timer initialTime={this.props.initialTime} />
-          </a>
-        </Link>
-        <Link href="/userinfo">
-          <a>
-            <UserInfo
-              username={this.props.username}
-              userImage={this.props.userImage}
-            />
-          </a>
-        </Link>
-      </div>
-    );
-  }
+  return (
+    <div>
+      <h2>This is the Demo Container</h2>
+      <Link href="/counter">
+        <a>
+          <Counter counter={counter} />
+        </a>
+      </Link>
+      <Link href="/lightswitch">
+        <a>
+          <LightSwitch lightStatus={lightStatus} />
+        </a>
+      </Link>
+      <Link href="/timer">
+        <a>
+          <Timer />
+        </a>
+      </Link>
+      <Link href="/userinfo">
+        <a>
+          <UserInfo username={username} userImage={userImage} />
+        </a>
+      </Link>
+    </div>
+  );
 }
-
-export default connect(mapStateToProps, mapDispatchToProps)(DemoContainer);

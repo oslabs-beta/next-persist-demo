@@ -1,27 +1,24 @@
 import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import Link from 'next/link';
 
-function counter(pageProps) {
+import actions from '../redux/actions/actions';
+
+export default function counter() {
+  const counter = useSelector((state) => state.counter);
+  const dispatch = useDispatch();
+
   return (
     <div>
       <h1>This is the Counter Page</h1>
-      <h4>Counter: {pageProps.props.counter}</h4>
+      <h4>Counter: {counter}</h4>
+      <div>
+        <button onClick={() => dispatch(actions.updateCounter(1))}>+</button>
+        <button onClick={() => dispatch(actions.updateCounter(-1))}>-</button>
+      </div>
       <Link href="/demo">
         <a>Back to Demo</a>
       </Link>
     </div>
   );
 }
-
-// how do we access state in here
-// how do we modify state from here
-counter.getInitialProps = async () => {
-  const counter = 420;
-  return {
-    props: {
-      counter,
-    },
-  };
-};
-
-export default counter;

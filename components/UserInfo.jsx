@@ -1,6 +1,6 @@
 import React from 'react';
 
-function UserInfo(props) {
+export default function UserInfo(props) {
   return (
     <div>
       <h3>This is the UserInfo Component</h3>
@@ -9,5 +9,3 @@ function UserInfo(props) {
     </div>
   );
 }
-
-export default UserInfo;

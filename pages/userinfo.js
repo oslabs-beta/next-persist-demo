@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 
-function userinfo() {
+export default function userinfo() {
   return (
     <div>
       <h1>This is the UserInfo Page</h1>
@@ -11,5 +11,3 @@ function userinfo() {
     </div>
   );
 }
-
-export default userinfo;

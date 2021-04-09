@@ -1,8 +1,8 @@
 import React from 'react';
 
-function LightSwitch(props) {
+export default function LightSwitch(props) {
   let lightStatus = '';
-  if (props.lightSwitch) {
+  if (props.lightStatus) {
     lightStatus = 'On';
   } else {
     lightStatus = 'Off';
@@ -10,10 +10,8 @@ function LightSwitch(props) {
 
   return (
     <div>
-      <h3>This is the LightSwitch Component</h3>
-      <h4>Lightswitch: {lightStatus}</h4>
+      <h3>This is the Light Switch Component</h3>
+      <h4>Light Switch: {lightStatus}</h4>
     </div>
   );
 }
-
-export default LightSwitch;

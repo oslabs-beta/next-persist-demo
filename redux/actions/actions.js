@@ -2,38 +2,25 @@ import * as types from '../constants/actionTypes';
 
 const actions = {};
 
-actions.increaseCounter = () => ({
-  type: types.INCREASE_COUNTER,
-  payload: 0,
+actions.updateCounter = (change) => ({
+  type: types.UPDATE_COUNTER,
+  payload: change,
 });
 
-actions.decreaseCounter = () => ({
-  type: types.DECREASE_COUNTER,
-  payload: 0,
-});
-
-// ?? do we need on and off
-actions.switchOn = (status) => ({
-  type: types.SWITCH_ON,
+actions.updateLightStatus = (status) => ({
+  type: types.UPDATE_LIGHT_STATUS,
   payload: status,
 });
 
-// ?? do we need on and off
-actions.switchOff = (status) => ({
-  type: types.SWITCH_OFF,
-  payload: status,
+actions.tick = (currentTime) => ({
+  type: types.TICK,
+  payload: currentTime,
 });
 
 // ?? not sure how time is going to work
 actions.restartTime = (newTime) => ({
   type: types.RESTART_TIME,
   payload: newTime,
-});
-
-// ?? not sure how time is going to work
-actions.tick = () => ({
-  type: types.TICK,
-  payload: 0,
 });
 
 actions.updateUsername = (newUsername) => ({
