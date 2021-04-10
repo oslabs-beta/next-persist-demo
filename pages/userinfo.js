@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Link from 'next/link';
 import { useSelector, useDispatch } from 'react-redux';
 
@@ -8,7 +8,18 @@ export default function userinfo() {
   const { username, userIcon } = useSelector((state) => state);
   const dispatch = useDispatch();
 
-  // ADD: submit on enter
+  // bind enter key to submitUserName
+  useEffect(() => {
+    document
+      .getElementById('username')
+      .addEventListener('keydown', onEnterPress);
+  }, []);
+  const onEnterPress = (event) => {
+    if (event.code === 'Enter' || event.code === 'NumpadEnter') {
+      submitUsername();
+    }
+  };
+
   const submitUsername = () => {
     const usernameInput = document.getElementById('username').value || 'Guest';
     dispatch(actions.updateUsername(usernameInput));
@@ -54,6 +65,7 @@ export default function userinfo() {
           <option value="🤡">🤡</option>
         </select>
       </div>
+
       <Link href="/demo">
         <a>Back to Demo</a>
       </Link>
