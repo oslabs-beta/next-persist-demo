@@ -16,6 +16,11 @@ export default function counter() {
         <button onClick={() => dispatch(actions.updateCounter(1))}>+</button>
         <button onClick={() => dispatch(actions.updateCounter(-1))}>-</button>
       </div>
+      <div>
+        <button onClick={() => dispatch(actions.resetCounter())}>
+          RESET COUNTER
+        </button>
+      </div>
       <Link href="/demo">
         <a>Back to Demo</a>
       </Link>

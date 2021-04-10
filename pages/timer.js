@@ -10,7 +10,7 @@ export default function timer() {
   const dispatch = useDispatch();
 
   useInterval(() => {
-    dispatch(actions.tick(new Date()));
+    dispatch(actions.updateCurrentTime(new Date()));
   }, 1000);
 
   const [hasMounted, setHasMounted] = useState(false);
@@ -28,9 +28,14 @@ export default function timer() {
   return (
     <div>
       <h1>This is the Timer Page</h1>
-      <h4>Initial Time: {initialTime.toJSON().slice(11, 19)}</h4>
-      <h4>Current Time: {currentTime.toJSON().slice(11, 19)}</h4>
-      <h4>Time Passed: {elapsedTime}</h4>
+      {/* <h4>Initial Time: {initialTime.toJSON().slice(11, 19)}</h4>
+      <h4>Current Time: {currentTime.toJSON().slice(11, 19)}</h4> */}
+      <h4>Time Passed Since Reset: {elapsedTime}</h4>
+      <div>
+        <button onClick={() => dispatch(actions.resetInitialTime(new Date()))}>
+          RESET TIMER
+        </button>
+      </div>
       <Link href="/demo">
         <a>Back to Demo</a>
       </Link>

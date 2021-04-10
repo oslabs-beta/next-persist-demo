@@ -6,21 +6,29 @@ const initialState = {
   initialTime: new Date(),
   currentTime: new Date(),
   username: 'Guest',
-  userImage: 'guest.png',
+  userIcon: '👤',
 };
 
 const demoReducer = (state = initialState, action) => {
   let counter;
+  let change;
   let lightStatus;
   let initialTime;
   let currentTime;
   let username;
-  let userImage;
+  let userIcon;
 
   switch (action.type) {
     case types.UPDATE_COUNTER:
-      const change = action.payload;
+      change = action.payload;
       counter = state.counter + change;
+      return {
+        ...state,
+        counter,
+      };
+
+    case types.RESET_COUNTER:
+      counter = 0;
       return {
         ...state,
         counter,
@@ -33,24 +41,33 @@ const demoReducer = (state = initialState, action) => {
         lightStatus,
       };
 
-    case types.TICK:
+    case types.UPDATE_CURRENT_TIME:
       currentTime = action.payload;
       return {
         ...state,
         currentTime,
       };
 
-    case types.RESTART_TIME:
-      console.log('Restart Time');
-      return state;
+    case types.RESET_INITIAL_TIME:
+      initialTime = action.payload;
+      return {
+        ...state,
+        initialTime,
+      };
 
     case types.UPDATE_USERNAME:
-      console.log('Update Username');
-      return state;
+      username = action.payload;
+      return {
+        ...state,
+        username,
+      };
 
-    case types.UPDATE_USER_IMAGE:
-      console.log('Update User Image');
-      return state;
+    case types.UPDATE_USER_ICON:
+      userIcon = action.payload;
+      return {
+        ...state,
+        userIcon,
+      };
 
     default:
       return state;

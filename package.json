@@ -13,5 +13,9 @@
     "react-dom": "17.0.2",
     "react-redux": "^7.2.3",
     "redux": "^4.0.5"
+  },
+  "devDependencies": {
+    "eslint": "^7.24.0",
+    "eslint-plugin-react": "^7.23.2"
   }
 }

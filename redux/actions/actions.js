@@ -7,19 +7,22 @@ actions.updateCounter = (change) => ({
   payload: change,
 });
 
+actions.resetCounter = () => ({
+  type: types.RESET_COUNTER,
+});
+
 actions.updateLightStatus = (status) => ({
   type: types.UPDATE_LIGHT_STATUS,
   payload: status,
 });
 
-actions.tick = (currentTime) => ({
-  type: types.TICK,
+actions.updateCurrentTime = (currentTime) => ({
+  type: types.UPDATE_CURRENT_TIME,
   payload: currentTime,
 });
 
-// ?? not sure how time is going to work
-actions.restartTime = (newTime) => ({
-  type: types.RESTART_TIME,
+actions.resetInitialTime = (newTime) => ({
+  type: types.RESET_INITIAL_TIME,
   payload: newTime,
 });
 
@@ -28,9 +31,9 @@ actions.updateUsername = (newUsername) => ({
   payload: newUsername,
 });
 
-actions.updateUserImage = (newUserImage) => ({
-  type: types.UPDATE_USER_IMAGE,
-  payload: newUserImage,
+actions.updateUserIcon = (newUserIcon) => ({
+  type: types.UPDATE_USER_ICON,
+  payload: newUserIcon,
 });
 
 export default actions;
