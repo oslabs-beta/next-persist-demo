@@ -9,7 +9,7 @@ export default function Timer() {
   const dispatch = useDispatch();
 
   useInterval(() => {
-    dispatch(actions.tick(new Date()));
+    dispatch(actions.updateCurrentTime(new Date()));
   }, 1000);
 
   const [hasMounted, setHasMounted] = useState(false);

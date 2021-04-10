@@ -11,7 +11,7 @@ export default function DemoContainer() {
     initialTime,
     currentTime,
     username,
-    userImage,
+    userIcon,
   } = useSelector((state) => state);
 
   return (
@@ -34,7 +34,7 @@ export default function DemoContainer() {
       </Link>
       <Link href="/userinfo">
         <a>
-          <UserInfo username={username} userImage={userImage} />
+          <UserInfo username={username} userIcon={userIcon} />
         </a>
       </Link>
     </div>
