@@ -20,7 +20,7 @@ export default function Timer() {
     return null;
   }
 
-  const elapsedTime = new Date(currentTime - initialTime)
+  const elapsedTime = new Date(currentTime - new Date(initialTime))
     .toJSON()
     .slice(11, 19);
 

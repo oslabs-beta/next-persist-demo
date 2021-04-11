@@ -21,15 +21,13 @@ export default function timer() {
     return null;
   }
 
-  const elapsedTime = new Date(currentTime - initialTime)
+  const elapsedTime = new Date(currentTime - new Date(initialTime))
     .toJSON()
     .slice(11, 19);
 
   return (
     <div>
       <h1>This is the Timer Page</h1>
-      {/* <h4>Initial Time: {initialTime.toJSON().slice(11, 19)}</h4>
-      <h4>Current Time: {currentTime.toJSON().slice(11, 19)}</h4> */}
       <h4>Time Passed Since Reset: {elapsedTime}</h4>
       <div>
         <button onClick={() => dispatch(actions.resetInitialTime(new Date()))}>
