@@ -1,5 +1,5 @@
 import * as types from '../constants/actionTypes';
-
+import { getStorage } from 'next-persist';
 const initialState = {
   counter: 0,
   lightStatus: false,
@@ -9,7 +9,11 @@ const initialState = {
   userIcon: '👤',
 };
 
-const demoReducer = (state = initialState, action) => {
+
+
+const persistedState = getStorage('demoState', initialState);
+
+const demoReducer = (state = persistedState, action) => {
   let counter;
   let change;
   let lightStatus;
