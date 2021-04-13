@@ -1,0 +1,66 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.counterContainer {
+  background: #F8F9FA;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 18rem;
+  height: 25rem;
+  border: 1px solid #6C757D;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px #6C757D;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: space-around;
+  /* border: 3px solid green; */
+  width: 11.5rem;
+  margin: .5rem;
+}
+
+.buttons {
+  /* border: 3px solid yellow; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.backButton {
+  /* border: 1px solid green; */
+  margin: 1rem;
+  font-size: 1rem;
+}
+
+.displayName {
+  margin: 1rem;
+}
+
+.displayCounter {
+  font-size: 8rem;
+  margin: 0;
+}
+
+.displayTimer {
+  font-size: 4rem;
+  margin: 0;
+}
+
+.displaySwitch {
+  transform: rotate(270deg);
+}
+
+.aButton {
+  font-size: 50rem;
+  font-weight: 700;
+}
