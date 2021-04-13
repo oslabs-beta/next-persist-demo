@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useSelector, useDispatch } from 'react-redux';
+import styles from '../styles/Page.module.css'
+import Button from '@material-ui/core/Button'
 
 import useInterval from '../lib/useInterval';
 import actions from '../redux/actions/actions';
@@ -26,16 +28,18 @@ export default function timer() {
     .slice(11, 19);
 
   return (
-    <div>
-      <h1>This is the Timer Page</h1>
-      <h4>Time Passed Since Reset: {elapsedTime}</h4>
-      <div>
-        <button onClick={() => dispatch(actions.resetInitialTime(new Date()))}>
-          RESET TIMER
-        </button>
+    <div className={styles.container}>
+      <div className={styles.counterContainer}>
+        <h1 className={styles.displayName}>Elapsed Time</h1>
+        <p className={styles.displayTimer}>{elapsedTime}</p>
+        <div>
+          <Button variant='contained' disableRipple={true} color='primary' onClick={() => dispatch(actions.resetInitialTime(new Date()))}>
+            RESET TIMER
+          </Button>
+        </div>
       </div>
       <Link href="/demo">
-        <a>Back to Demo</a>
+        <a className={styles.backButton}>Back to Demo</a>
       </Link>
     </div>
   );
