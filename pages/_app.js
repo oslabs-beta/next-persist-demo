@@ -5,7 +5,7 @@ import store from '../redux/store/index';
 import PersistWrapper from 'next-persist/src/NextPersistWrapper';
 
 const config = {
-  method: 'cookies',
+  method: 'localStorage',
   allowList: {
     demo: ['counter', 'initialTime', 'lightStatus', 'userIcon', 'username'],
   },
