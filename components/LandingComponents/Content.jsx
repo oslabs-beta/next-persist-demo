@@ -1,6 +1,7 @@
 import React from 'react'
 import Blurb from './Blurb.jsx'
 import Implementation from './Implementation.jsx'
+import ImplementationRev from './ImplementationRev.jsx'
 import Team from './Team.jsx'
 import styles from '../../styles/Home.module.css'
 
@@ -14,11 +15,19 @@ export default function Content() {
       </div>
       <div className={styles.impContainer}>
         <Implementation content={implementation.impOne}/>
-        <Implementation content={implementation.impTwo}/>
+        <ImplementationRev content={implementation.impTwo}/>
         <Implementation content={implementation.impThree}/>
       </div>
       <div className={styles.teamContainer}>
-        {/* <Team /> */}
+        <div className={styles.teamHeader}>
+          <h1 className={styles.teamHeaderText}>The team behind most.js</h1>
+        </div>
+        <div className={styles.teamInfo}>
+          <Team team={team.christopher}/>
+          <Team team={team.brian}/>
+          <Team team={team.greg}/>
+          <Team team={team.matt}/>
+        </div>
       </div>
     </div>
   )
@@ -54,3 +63,38 @@ const content = {
     paragraph: 'After importing next-persist, simply set up a configuration object and incorporate two functions. We do the rest, delivering you the benefits of SSG and SSR with state persistence.',
   },
 }
+
+const team = {
+  christopher: {
+    name: 'Christopher Bosserman',
+    src: '/assets/christopher.png',
+    alt: 'Headshot of Christopher',
+    github: 'https://github.com/christopherpbosserman',
+    linkedin: 'https://www.linkedin.com/in/christopherpbosserman/',
+  },
+
+  brian: {
+    name: 'Brian Chu',
+    src: '/assets/brian.jpeg',
+    alt: 'Headshot of Brian',
+    github: 'https://github.com/darthchu',
+    linkedin: 'https://www.linkedin.com/in/brianwilliamchu/',
+  },
+
+  greg: {
+    name: 'Greg Levine-Rozenvayn',
+    src: '/assets/greg.png',
+    alt: 'Headshot of Greg',
+    github: 'https://github.com/grishaLR',
+    linkedin: 'https://www.linkedin.com/in/gregory-levine-rozenvayn/',
+  },
+
+  matt: {
+    name: 'Matthew Salvador',
+    src: '/assets/matt.png',
+    alt: 'Headshot of Matt',
+    github: 'https://github.com/mjsalvador',
+    linkedin: 'https://www.linkedin.com/in/matthewsalvador/',
+  },
+
+};
