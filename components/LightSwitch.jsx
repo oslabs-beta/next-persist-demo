@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from '../styles/Demo.module.css';
 
 export default function LightSwitch(props) {
   let lightStatus = '';
@@ -9,9 +10,13 @@ export default function LightSwitch(props) {
   }
 
   return (
-    <div>
-      <h3>This is the Light Switch Component</h3>
-      <h4>Light Switch: {lightStatus}</h4>
+    <div className={styles.compContainer}>
+      <div className={styles.displayBox}>
+        <p className={styles.displayName}>Light Switch</p>
+      </div>
+      <div className={styles.displayContent}>
+        <p className={styles.displaySwitchStatus}>{lightStatus}</p>
+      </div>
     </div>
   );
 }
