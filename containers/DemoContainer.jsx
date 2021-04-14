@@ -1,12 +1,10 @@
-import React, {useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useSelector } from 'react-redux';
 
 import { Counter, LightSwitch, Timer, UserInfo } from '../components';
 
 export default function DemoContainer() {
-
-  
   const {
     counter,
     lightStatus,
@@ -14,8 +12,8 @@ export default function DemoContainer() {
     currentTime,
     username,
     userIcon,
-  } = useSelector((state) => state);
-  
+  } = useSelector((state) => state.demo);
+
   const [hasMounted, setHasMounted] = useState(false);
   useEffect(() => {
     setHasMounted(true);

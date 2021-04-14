@@ -5,7 +5,7 @@ import useInterval from '../lib/useInterval';
 import actions from '../redux/actions/actions';
 
 export default function Timer() {
-  const { initialTime, currentTime } = useSelector((state) => state);
+  const { initialTime, currentTime } = useSelector((state) => state.demo);
   const dispatch = useDispatch();
 
   useInterval(() => {
@@ -20,7 +20,7 @@ export default function Timer() {
     return null;
   }
 
-  const elapsedTime = new Date(currentTime - new Date(initialTime))
+  const elapsedTime = new Date((currentTime || 0) - new Date(initialTime))
     .toJSON()
     .slice(11, 19);
 
