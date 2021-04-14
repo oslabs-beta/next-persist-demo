@@ -64,8 +64,8 @@ export default function userinfo() {
           SUBMIT
         </Button>
 
-        <div>
-          <h4>Update Icon:</h4>
+        <div className={styles.updateIcon}>
+          <h4 className={styles.updateIconText}>Update Icon:</h4>
           <Select
             id="userIcon"
             value={userIcon}

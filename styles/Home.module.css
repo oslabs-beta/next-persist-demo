@@ -1,0 +1,151 @@
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* STYLING FOR HEADER NAVBAR */
+.headerContainer {
+  background-color: #20232A;
+  color: white;
+  z-index: 1;
+  position: fixed;
+  width: 100%;
+  height: 50px;
+}
+
+.headerNav {
+  /* border: 3px solid yellow; */
+  width: 90%;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.logo {
+  margin-right: 10px;
+  width: 150px;
+}
+
+.navigation {
+  width: 450px;
+  height: 100%;
+  /* border: 3px solid green; */
+  display: flex;
+  align-items: center;
+}
+
+.links {
+  padding-left: 30px;
+  padding-right: 30px;
+  font-weight: 300;
+}
+
+/* STYLING FOR BODY */
+
+.bodyContainer {
+  width: 100%;
+  height: 100%;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.banner {
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #2F3037;
+  width: 100%;
+  height: 300px;
+}
+
+.bannerTextContainer {
+  color: #FFFFFF;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bannerH1Text {
+  /* border: 1px solid orange; */
+  margin: 0;
+}
+
+.bannerPText {
+  /* border: 1px solid yellow; */
+  font-size: 1.5rem;
+  font-weight: 200;
+  letter-spacing: 0.01rem;
+  text-align: center;
+}
+
+.bannerButton {
+  padding: 10px 25px;
+  margin-top: 1rem;
+  font-size: 1rem;
+  border-radius: 3px;
+  border: none;
+  background-color: #3AC0BA;
+  color: #20232A;
+  outline: none;
+}
+
+.content {
+  width: 90%;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.principles {
+  border: 3px solid red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30rem;
+}
+
+.blurb {
+  border: 3px solid green;
+  width: 25rem;
+  height: 90%;
+}
+
+.implementation {
+  border: 3px solid yellow;
+  height: 20rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.implementationDesc {
+  border: 3px solid orange;
+  height: 90%;
+  width: 20rem;
+}
+
+.implementationCode {
+  border: 3px solid pink;
+  height: 90%;
+  width: 40rem;
+}
+/* STYLING FOR BODY */
+
+.footerContainer {
+  /* border: 3px solid red; */
+  width: 100%;
+  height: 100%;
+}

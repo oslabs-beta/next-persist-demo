@@ -10,7 +10,7 @@
   background: #f8f9fa;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
   width: 18rem;
   height: 25rem;
@@ -43,10 +43,12 @@
 }
 
 .displayName {
+  /* border: 3px solid green; */
   margin: 1rem;
 }
 
 .displayCounter {
+  /* border: 3px solid green; */
   font-size: 8rem;
   margin: 0;
 }
@@ -126,3 +128,15 @@ input:checked + .slider:before {
   transform: translateX(26px);
 }
 /* All for a light switch */
+
+.updateIcon {
+  /* border: 3px solid red; */
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: space-around;
+  align-items: center;
+}
+
+.updateIconText {
+  margin-right: 1rem;
+}
