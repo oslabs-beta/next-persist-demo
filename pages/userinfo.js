@@ -1,21 +1,20 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useSelector, useDispatch } from 'react-redux';
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
+import Select from '@material-ui/core/Select';
+import MenuItem from '@material-ui/core/MenuItem';
 
 import actions from '../redux/actions/actions';
+import styles from '../styles/Page.module.css';
 
 export default function userinfo() {
   const { username, userIcon } = useSelector((state) => state);
   const dispatch = useDispatch();
 
-  // bind enter key to submitUserName
-  useEffect(() => {
-    document
-      .getElementById('username')
-      .addEventListener('keydown', onEnterPress);
-  }, []);
-  const onEnterPress = (event) => {
-    if (event.code === 'Enter' || event.code === 'NumpadEnter') {
+  const checkEnter = (e) => {
+    if (e.keyCode == 13) {
       submitUsername();
     }
   };
@@ -26,48 +25,64 @@ export default function userinfo() {
     document.getElementById('username').value = '';
   };
 
-  const changeUserIcon = () => {
-    const userIcon = document.getElementById('userIcon').value;
-    dispatch(actions.updateUserIcon(userIcon));
+  const changeUserIcon = (e) => {
+    dispatch(actions.updateUserIcon(e.target.value));
   };
 
+  const [hasMounted, setHasMounted] = useState(false);
+  useEffect(() => {
+    setHasMounted(true);
+  }, []);
+  if (!hasMounted) {
+    return null;
+  }
+
   return (
-    <div>
-      <h1>This is the User Info Page</h1>
-
-      <h4>
-        Welcome! {username} - {userIcon}
-      </h4>
-
-      <h4>Change Username:</h4>
-      <input type="text" name="username" id="username"></input>
-      <button
-        onClick={() => {
-          submitUsername();
-        }}
-      >
-        SUBMIT
-      </button>
-
-      <h4>Change User Icon:</h4>
-      <div>
-        <select
-          id="userIcon"
-          defaultValue={userIcon}
-          onChange={() => {
-            changeUserIcon();
+    <div className={styles.container}>
+      <div className={styles.counterContainer}>
+        <h1 className={styles.displayName}>Welcome!</h1>
+        <h3>
+          {username} - {userIcon}
+        </h3>
+        <TextField
+          id="username"
+          label="Update Username"
+          variant="outlined"
+          size="small"
+          onKeyDown={(e) => {
+            checkEnter(e);
+          }}
+        />
+        <Button
+          variant="contained"
+          disableRipple={true}
+          color="primary"
+          onClick={() => {
+            submitUsername();
           }}
         >
-          <option value="👤">👤</option>
-          <option value="🐱">🐱</option>
-          <option value="🐶">🐶</option>
-          <option value="🦄">🦄</option>
-          <option value="🤡">🤡</option>
-        </select>
-      </div>
+          SUBMIT
+        </Button>
 
+        <div>
+          <h4>Update Icon:</h4>
+          <Select
+            id="userIcon"
+            value={userIcon}
+            onChange={(e) => {
+              changeUserIcon(e);
+            }}
+          >
+            <MenuItem value="👤">👤</MenuItem>
+            <MenuItem value="🐱">🐱</MenuItem>
+            <MenuItem value="🐶">🐶</MenuItem>
+            <MenuItem value="🦄">🦄</MenuItem>
+            <MenuItem value="🤡">🤡</MenuItem>
+          </Select>
+        </div>
+      </div>
       <Link href="/demo">
-        <a>Back to Demo</a>
+        <a className={styles.backButton}>Back to Demo</a>
       </Link>
     </div>
   );

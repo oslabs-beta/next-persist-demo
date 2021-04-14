@@ -1,11 +1,10 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Link from 'next/link';
-import styles from '../styles/Page.module.css'
-import Button from '@material-ui/core/Button'
-import Typography from '@material-ui/core/Typography'
+import Button from '@material-ui/core/Button';
 
 import actions from '../redux/actions/actions';
+import styles from '../styles/Page.module.css';
 
 export default function counter() {
   const counter = useSelector((state) => state.counter);
@@ -18,11 +17,32 @@ export default function counter() {
         <p className={styles.displayCounter}>{counter}</p>
         <div className={styles.buttons}>
           <div className={styles.buttonContainer}>
-            <Button variant='contained' disableRipple={true} color='primary' onClick={() => dispatch(actions.updateCounter(1))}>+</Button>
-            <Button variant='contained' disableRipple={true} color='primary' onClick={() => dispatch(actions.updateCounter(-1))}>-</Button>
+            <Button
+              variant="contained"
+              disableRipple={true}
+              color="primary"
+              onClick={() => dispatch(actions.updateCounter(-1))}
+            >
+              -
+            </Button>
+            <Button
+              variant="contained"
+              disableRipple={true}
+              color="primary"
+              onClick={() => dispatch(actions.updateCounter(1))}
+            >
+              +
+            </Button>
           </div>
           <div className={styles.buttonContainer}>
-            <Button variant='contained' disableRipple={true} color='primary' onClick={() => dispatch(actions.resetCounter())}>Reset Counter</Button>
+            <Button
+              variant="contained"
+              disableRipple={true}
+              color="primary"
+              onClick={() => dispatch(actions.resetCounter())}
+            >
+              Reset Counter
+            </Button>
           </div>
         </div>
       </div>
