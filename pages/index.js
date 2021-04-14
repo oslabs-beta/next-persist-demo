@@ -26,23 +26,38 @@ export default function Home() {
             <div className={styles.bannerTextContainer}>
               <h1 className={styles.bannerH1Text}>next-persist</h1>
               <p className={styles.bannerPText}>Bridging the gap between client-side persistence and server-side rendering.</p>
-              <button className={styles.bannerButton}>Get Started</button>
+              <button className={styles.bannerButton}>
+                <Link href="/demo"><a>Demo</a></Link>
+                </button>
             </div>
           </header>
           <div className={styles.content}>
             <div className={styles.principles}>
               <div className={styles.blurb}>
-
+                some blurb
               </div>
               <div className={styles.blurb}>
-
+                some blurb
               </div>
               <div className={styles.blurb}>
-
+                some blurb
               </div>
             </div>
             <div className={styles.implementation}>
-
+              <div className={styles.implementationDesc}>
+                some implementation description
+              </div>
+              <div className={styles.implementationCode}>
+                some code snippet/screenshot
+              </div>
+            </div>
+            <div className={styles.implementation}>
+              <div className={styles.implementationDesc}>
+                i should probably make these components
+              </div>
+              <div className={styles.implementationCode}>
+                im in div hell
+              </div>
             </div>
           </div>
         </div>
@@ -61,9 +76,7 @@ export default function Home() {
 
       </div>
       <h1>This is our Landing Page</h1>
-      <Link href="/demo">
-        <a>Demo</a>
-      </Link> */}
+       */}
     </div>
   );
 }

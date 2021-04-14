@@ -119,15 +119,29 @@
 
 .blurb {
   border: 3px solid green;
-  width: 33%;
+  width: 25rem;
   height: 90%;
 }
 
 .implementation {
   border: 3px solid yellow;
   height: 20rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+.implementationDesc {
+  border: 3px solid orange;
+  height: 90%;
+  width: 20rem;
+}
+
+.implementationCode {
+  border: 3px solid pink;
+  height: 90%;
+  width: 40rem;
+}
 /* STYLING FOR BODY */
 
 .footerContainer {
