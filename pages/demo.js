@@ -2,14 +2,20 @@ import React from 'react';
 import Link from 'next/link';
 
 import DemoContainer from '../containers/DemoContainer';
+import styles from '../styles/Demo.module.css';
 
 export default function demo() {
   return (
-    <div>
-      <h1>This is the Demo Page</h1>
+    <div className={styles.container}>
+      <p className={styles.demoTitle}>
+        Click on any component to modify it's value.
+      </p>
+      <p className={styles.demoInfo}>
+        Refresh or navigate away from the page and your state will be retained!
+      </p>
       <DemoContainer />
       <Link href="/">
-        <a> Back to Home </a>
+        <a className={styles.backButton}>Back to Home</a>
       </Link>
     </div>
   );

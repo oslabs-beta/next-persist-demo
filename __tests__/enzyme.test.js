@@ -54,12 +54,12 @@ describe('React demo unit tests', () => {
     });
   });
 
-  describe('Timer', () => {
+  xdescribe('Timer', () => {
     let wrapper;
     let innerWrapper;
 
     const initialState = { initialTime: new Date(), currentTime: new Date() };
-    const store = mockStore(initialState);
+    const demo = mockStore(initialState);
 
     beforeAll(() => {
       wrapper = mount(

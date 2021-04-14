@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { useSelector } from 'react-redux';
 
 import { Counter, LightSwitch, Timer, UserInfo } from '../components';
+import styles from '../styles/Demo.module.css';
 
 export default function DemoContainer() {
   const {
@@ -23,16 +24,15 @@ export default function DemoContainer() {
   }
 
   return (
-    <div>
-      <h2>This is the Demo Container</h2>
+    <div className={styles.demoContainer}>
+      <Link href="/userinfo">
+        <a>
+          <UserInfo username={username} userIcon={userIcon} />
+        </a>
+      </Link>
       <Link href="/counter">
         <a>
           <Counter counter={counter} />
-        </a>
-      </Link>
-      <Link href="/lightswitch">
-        <a>
-          <LightSwitch lightStatus={lightStatus} />
         </a>
       </Link>
       <Link href="/timer">
@@ -40,9 +40,9 @@ export default function DemoContainer() {
           <Timer />
         </a>
       </Link>
-      <Link href="/userinfo">
+      <Link href="/lightswitch">
         <a>
-          <UserInfo username={username} userIcon={userIcon} />
+          <LightSwitch lightStatus={lightStatus} />
         </a>
       </Link>
     </div>
