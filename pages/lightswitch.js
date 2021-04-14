@@ -1,8 +1,7 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useSelector, useDispatch } from 'react-redux';
-import styles from '../styles/Page.module.css'
-import { Button, Switch } from '@material-ui/core'
+import styles from '../styles/Page.module.css';
 
 import actions from '../redux/actions/actions';
 
@@ -10,23 +9,38 @@ export default function lightswitch() {
   const lightStatus = useSelector((state) => state.lightStatus);
   const dispatch = useDispatch();
 
+  const [hasMounted, setHasMounted] = useState(false);
+  useEffect(() => {
+    setHasMounted(true);
+  }, []);
+  if (!hasMounted) {
+    return null;
+  }
+
+  let lightStatusText = '';
+  if (lightStatus) {
+    lightStatusText = 'On';
+  } else {
+    lightStatusText = 'Off';
+  }
+
   return (
     <div className={styles.container}>
       <div className={styles.counterContainer}>
         <h1 className={styles.displayName}>Light Switch</h1>
-        <div className={styles.displaySwitch}>
-          
-          <Switch size='medium' checked={lightStatus} color='primary' onChange={() => dispatch(actions.updateLightStatus(!lightStatus))}></Switch>
-          {/* <input
+        <label className={styles.displaySwitch}>
+          <input
             type="checkbox"
             defaultChecked={lightStatus}
             onClick={() => dispatch(actions.updateLightStatus(!lightStatus))}
-          ></input> */}
-        </div>
-        <Link href="/demo">
-          <Button variant='contained' disableRipple={true} color='primary' className={styles.backButton}>Back to Demo</Button>
-        </Link>
+          ></input>
+          <span className={styles.slider}></span>
+        </label>
+        <p className={styles.displaySwitchStatus}>{lightStatusText}</p>
       </div>
+      <Link href="/demo">
+        <a className={styles.backButton}>Back to Demo</a>
+      </Link>
     </div>
   );
 }
