@@ -7,7 +7,7 @@ import actions from '../redux/actions/actions';
 import styles from '../styles/Page.module.css';
 
 export default function counter() {
-  const counter = useSelector((state) => state.counter);
+  const counter = useSelector((state) => state.demo.counter);
   const dispatch = useDispatch();
 
   return (

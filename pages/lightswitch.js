@@ -6,7 +6,7 @@ import styles from '../styles/Page.module.css';
 import actions from '../redux/actions/actions';
 
 export default function lightswitch() {
-  const lightStatus = useSelector((state) => state.lightStatus);
+  const lightStatus = useSelector((state) => state.demo.lightStatus);
   const dispatch = useDispatch();
 
   const [hasMounted, setHasMounted] = useState(false);

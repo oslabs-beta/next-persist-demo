@@ -10,7 +10,7 @@ import actions from '../redux/actions/actions';
 import styles from '../styles/Page.module.css';
 
 export default function userinfo() {
-  const { username, userIcon } = useSelector((state) => state);
+  const { username, userIcon } = useSelector((state) => state.demo);
   const dispatch = useDispatch();
 
   const checkEnter = (e) => {

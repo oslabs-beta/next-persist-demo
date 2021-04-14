@@ -5,10 +5,10 @@ import store from '../redux/store/index';
 import PersistWrapper from 'next-persist/src/NextPersistWrapper';
 
 const config = {
-  method: 'localStorage',
-  key: 'demoState',
-  allowList: ['counter', 'initialTime', 'lightStatus', 'userIcon', 'username'],
-  combinedReducers: false,
+  method: 'cookies',
+  allowList: {
+    demo: ['counter', 'initialTime', 'lightStatus', 'userIcon', 'username'],
+  },
 };
 
 export default function MyApp({ Component, pageProps }) {
