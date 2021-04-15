@@ -11,7 +11,7 @@ export default function Header() {
         </div>
       <div className={styles.navigation}>
         <a className={styles.navLinks} href='https://github.com/oslabs-beta/next-persist'>Github</a>
-        <a className={styles.navLinks} href='https://medium.com/'>Blog</a>
+        <a className={styles.navLinks} href='https://medium.com/@grisha617/next-persist-bridging-the-gap-between-server-side-rendering-and-client-state-persisted-data-cb89d639f241'>Blog</a>
         <a className={styles.navLinks} href='https://www.npmjs.com/package/next-persist'>npm</a>
       </div>
     </div>

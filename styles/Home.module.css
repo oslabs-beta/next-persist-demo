@@ -200,8 +200,9 @@
 
 .implementation {
   /* border: 3px solid yellow; */
-  padding-left: 20px;
-  padding-right: 20px;
+  padding: 10px 20px 10px 20px;
+  /* padding-left: 20px;
+  padding-right: 20px; */
   width: 100%;
   height: 15rem;
   display: flex;
@@ -209,21 +210,55 @@
   justify-content: space-between;
 }
 
+.codeText {
+  font-size: 17px;
+  background-color: #cccaca;
+}
+
 .implementationDesc {
   /* border: 3px solid orange; */
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   line-height: 1.7;
   height: 100%;
-  width: 27rem;
+  width: 29rem;
 }
 
 .implementationCode {
-  border: 3px solid pink;
+  /* border: 3px solid pink; */
+  /* margin-bottom: 20px; */
+  background-color: #2F3037;
+  padding: 1.75%;
+  color: #d4d4d4;
+  font-weight: 200;
+  font-size: 14px;
   height: 100%;
   width: 40rem;
+  overflow: scroll;
+}
+
+.learnMoreBtnContainer {
+  margin-top: 3rem;
+}
+
+.learnMoreButton {
+  padding: 15px 45px;
+  font-size: 1rem;
+  border-radius: 3px;
+  border: none;
+  background-color: #3AC0BA;
+  color: #20232A;
+  outline: none;
+}
+
+.learnMoreButton:hover {
+  background-color: #2F3037;
+  color: #ffffff;
+  transition-timing-function: ease;
+  transition: 0.2s;
+  cursor: pointer;
 }
 
 .teamContainer {
@@ -279,6 +314,9 @@
   /* margin-top: 1rem; */
   width: 100%;
   display: flex;
+  font-size: 18px;
+  font-weight: 300;
+  letter-spacing: 0.01rem;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
@@ -297,7 +335,47 @@
 /* STYLING FOR FOOTER */
 
 .footerContainer {
-  /* border: 3px solid red; */
+  background-color: #20232A;
   width: 100%;
-  height: 100%;
+  height: 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footerNav {
+  /* border: 3px solid green; */
+  height: 90%;
+  width: 75rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.footerLogo {
+  /* border: 3px solid yellow; */
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 200;
+  letter-spacing: 0.03rem;
+  height: 90%;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.footerLinks {
+  /* border: 3px solid red; */
+  height: 90%;
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.footerAvatar {
+  cursor: pointer;
 }

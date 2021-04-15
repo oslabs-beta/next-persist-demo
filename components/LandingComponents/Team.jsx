@@ -13,7 +13,7 @@ export default function Team(props) {
         height={250}
       />
       <div className={styles.links}>
-        <h4>{props.team.name}</h4>
+        <p>{props.team.name}</p>
         <div className={styles.linkAvatars}>
           <a href={props.team.linkedin}>
             <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">

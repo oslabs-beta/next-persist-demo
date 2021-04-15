@@ -3,6 +3,7 @@ import Blurb from './Blurb.jsx'
 import Implementation from './Implementation.jsx'
 import ImplementationRev from './ImplementationRev.jsx'
 import Team from './Team.jsx'
+import Link from 'next/link'
 import styles from '../../styles/Home.module.css'
 
 export default function Content() {
@@ -15,16 +16,21 @@ export default function Content() {
       </div>
       <div className={styles.impContainer}>
         <Implementation content={implementation.impOne}/>
-        <ImplementationRev content={implementation.impTwo}/>
+        <Implementation content={implementation.impTwo}/>
         <Implementation content={implementation.impThree}/>
+        <div className={styles.learnMoreBtnContainer}>
+          <Link href='https://github.com/oslabs-beta/next-persist'>
+            <button className={styles.learnMoreButton}>Learn More</button>
+          </Link>
+        </div>
       </div>
       <div className={styles.teamContainer}>
         <div className={styles.teamHeader}>
           <h1 className={styles.teamHeaderText}>The team behind most.js</h1>
         </div>
         <div className={styles.teamInfo}>
-          <Team team={team.christopher}/>
           <Team team={team.brian}/>
+          <Team team={team.christopher}/>
           <Team team={team.greg}/>
           <Team team={team.matt}/>
         </div>
@@ -35,27 +41,100 @@ export default function Content() {
 
 const implementation = {
   impOne: {
-    desc: `Simply import PersistWrapper and wrap Next.js's Component prop with it. If your application uses Redux as a state management system, wrap the Provider component over PersistWrapper. Set up a configuration object and pass it down to PersistWrapper as a proper 'wrapperConfig'`
+    desc: {
+      header: 'Importing PersistWrapper',
+      text: <p>Simply import PersistWrapper and wrap it around Next.js's Component prop, then wrap Redux's Provider component around PersistWrapper. Set up a configuration object and pass it down to PersistWrapper as the prop {<code><text className={styles.codeText}>wrapperConfig</text></code>}</p>
+    },
+    code: 
+`// _app.js
+import { Provider } from "react-redux";
+import store from "../client/store";
+import PersistWrapper from 'next-persist/src/NextPersistWrapper';
+
+const config = {
+  method: 'localStorage'
+  allowList: {
+    reducerOne: ['stateItemOne', 'stateItemTwo'],
+  },
+};
+
+const MyApp = ({ Component, pageProps }) => {
+  return (
+    <Provider store={store}>
+      <PersistWrapper wrapperConfig={config}>
+        <Component {...pageProps} />
+      </PersistWrapper>
+    </Provider>
+  );
+};
+
+export default MyApp;
+`
   },
 
   impTwo: {
-    desc: `Import your state-setting method of choice (setStorage or setCookie) and pass your updated state through it. For your React application, call the method in your event handler. If you're utilizing Redux, call the method in your reducer file.`
+    desc: {
+      header: 'Retrieving persisted state from the client',
+      text: <p>In your reducer files, import your storage-retrieval method of choice. Pass your initial state through the next-persist method and set its evaluated result as the default state parameter in your reducer.</p>
+    },
+    code: 
+`// Reducer.js
+import { getStorage } from 'next-persist'
+
+const initialState = { stateProperty : 'stateValue' };
+
+const persistedState = getStorage('state', initialState);
+
+const reducer = (state = persistedState, action) => {
+  switch (action.type) {
+  default:
+    return state;
+  }
+};
+`
+
   },
 
   impThree: {
-    desc: `Use your state-retrieval method of choice (getStorage or getCookie) to obtain client-side persisted state and pass it down as a prop for your components to use. If you're working in a Redux environment, PersistWrapper will make the persisted state available to all the pages in your appllication.`
-  }
+    desc: {
+      header: 'Server-side rendering with next-persist',
+      text: <p>If you want to utilize Next.js's server-side rendering feature, import {<code><text className={styles.codeText}>getCookie</text></code>} in the component responsible for data-fetching. Call {<code><text className={styles.codeText}>getCookie</text></code>} within Next.js's data-fetching method and return its evaluated result as the value of the {<code><text className={styles.codeText}>pageProps</text></code>} property on the context object.</p>
+    },
+    code: 
+  `// _app.js
+import { getCookie } from 'next-persist/src/next-persist-cookies'
+
+const MyApp = ({ Component, pageProps }) => {
+  return (
+    <Provider store={store}>
+      <PersistWrapper wrapperConfig={config}>
+        <Component {...pageProps} />
+      </PersistWrapper>
+    </Provider>
+  );
+};
+
+MyApp.getInitialProps = async (ctx) => {
+  const cookieState = getCookie(ctx);
+  return {
+    pageProps : cookieState,
+  };
+};
+
+export default MyApp;
+`
+  },
 };
 
 const content = {
   blurbOne: {
     header: 'State persistence with Next.js',
-    paragraph: 'next-persist helps you integrate persistent client-side state with static site generation and server-side rendering with Next.js, allowing the flexibility between building dynamic, isomorphic web applications.',
+    paragraph: 'next-persist helps you integrate persistent client-side state with static site generation and server-side rendering with Next.js, allowing the flexibility of building dynamic, isomorphic web applications.',
   },
 
   blurbTwo: {
-    header: 'Flexible',
-    paragraph: 'Built with a Next.js environment in mind, next-persist is also compatible with React and Redux applications.',
+    header: 'Lightweight solution',
+    paragraph: 'next-persist offers developers a solution for dynamic client-side data persistence without having to worry about the architecture and costs of additional database management systems.',
   },
 
   blurbThree: {
