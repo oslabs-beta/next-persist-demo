@@ -24,9 +24,9 @@
   width: 26rem;
   height: 40rem;
   flex-wrap: wrap;
-  border: 1px solid #6c757d;
+  border: 1px solid #e9ecef;
   border-radius: 5px;
-  box-shadow: 2px 2px 5px #6c757d;
+  box-shadow: 2px 2px 5px #adb5bd;
 }
 
 .compContainer {
@@ -37,9 +37,9 @@
   align-items: center;
   width: 12rem;
   height: 19rem;
-  border: 1px solid #6c757d;
+  border: 1px solid #e9ecef;
   border-radius: 5px;
-  box-shadow: 2px 2px 5px #6c757d;
+  box-shadow: 2px 2px 5px #adb5bd;
 }
 
 .displayBox {
