@@ -1,12 +1,18 @@
 import React from 'react';
 
+import styles from '../styles/Demo.module.css';
+
 export default function UserInfo(props) {
   return (
-    <div>
-      <h3>This is the User Info Component</h3>
-      <h4>
-        Username: {props.username} - {props.userIcon}
-      </h4>
+    <div className={styles.compContainer}>
+      <div className={styles.displayBox}>
+        <p className={styles.displayName}>Welcome!</p>
+      </div>
+      <div className={styles.displayContent}>
+        <p className={styles.displayUserInfo}>
+          {props.username} - {props.userIcon}
+        </p>
+      </div>
     </div>
   );
 }

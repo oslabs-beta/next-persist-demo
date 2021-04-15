@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import useInterval from '../lib/useInterval';
 import actions from '../redux/actions/actions';
+import styles from '../styles/Demo.module.css';
 
 export default function Timer() {
   const { initialTime, currentTime } = useSelector((state) => state.demo);
@@ -25,9 +26,13 @@ export default function Timer() {
     .slice(11, 19);
 
   return (
-    <div>
-      <h3>This is the Timer Component</h3>
-      <h4>Time Passed: {elapsedTime}</h4>
+    <div className={styles.compContainer}>
+      <div className={styles.displayBox}>
+        <p className={styles.displayName}>Elapsed Time</p>
+      </div>
+      <div className={styles.displayContent}>
+        <p className={styles.displayTimer}>{elapsedTime}</p>
+      </div>
     </div>
   );
 }
