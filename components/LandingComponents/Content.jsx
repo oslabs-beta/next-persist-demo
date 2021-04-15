@@ -43,7 +43,7 @@ const implementation = {
   impOne: {
     desc: {
       header: 'Importing PersistWrapper',
-      text: <p>Simply import PersistWrapper and wrap it around Next.js's Component prop, then wrap Redux's Provider component around PersistWrapper. Set up a configuration object and pass it down to PersistWrapper as the prop {<code><text className={styles.codeText}>wrapperConfig</text></code>}</p>
+      text: <p>Simply import {<code><text className={styles.codeText}>PersistWrapper</text></code>} and wrap it around Next.js's Component prop, then wrap Redux's Provider component around {<code><text className={styles.codeText}>PersistWrapper</text></code>}. Set up a configuration object and pass it down to PersistWrapper as the prop {<code><text className={styles.codeText}>wrapperConfig</text></code>}</p>
     },
     code: 
 `// _app.js
