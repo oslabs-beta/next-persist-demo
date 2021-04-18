@@ -1,13 +1,14 @@
 import { Provider } from 'react-redux';
 import Head from 'next/head';
+import PersistWrapper from 'next-persist/src/NextPersistWrapper';
+import { getCookieProps } from 'next-persist';
 
 import '../styles/globals.css';
 import store from '../redux/store/index';
-import PersistWrapper from 'next-persist/src/NextPersistWrapper';
 import LogoWrapper from '../components/LogoWrapper.jsx';
 
 const config = {
-  method: 'localStorage',
+  method: 'cookies',
   allowList: {
     demo: ['counter', 'initialTime', 'lightStatus', 'userIcon', 'username'],
   },
@@ -28,3 +29,10 @@ export default function MyApp({ Component, pageProps }) {
     </Provider>
   );
 }
+
+MyApp.getInitialProps = async ({ ctx }) => {
+  const cookieState = getCookieProps(ctx);
+  return {
+    pageProps: cookieState,
+  };
+};
