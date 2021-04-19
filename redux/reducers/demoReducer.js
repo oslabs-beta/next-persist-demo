@@ -1,6 +1,6 @@
 import * as types from '../constants/actionTypes';
-import { getStorage } from 'next-persist';
-// import { getCookie } from 'next-persist/src/next-persist-cookies';
+// import { getLocalStore } from 'next-persist';
+import { getCookieStore } from 'next-persist';
 
 const initialState = {
   counter: 0,
@@ -11,8 +11,8 @@ const initialState = {
   userIcon: '👤',
 };
 
-// const persistedState = getCookie(false, 'demo', initialState);
-const persistedState = getStorage('demo', initialState);
+const persistedState = getCookieStore('demo', initialState);
+// const persistedState = getLocalStore('demo', initialState);
 
 const demoReducer = (state = persistedState, action) => {
   let counter;
