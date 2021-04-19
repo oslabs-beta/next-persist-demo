@@ -20,7 +20,6 @@ export default function MyApp({ Component, pageProps }) {
       <PersistWrapper wrapperConfig={config}>
         <Head>
           <title>next-persist - A node module by most.js</title>
-          <link rel="icon" href="/favicon.ico" />
         </Head>
         <LogoWrapper>
           <Component {...pageProps} />
