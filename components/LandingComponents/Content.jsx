@@ -73,7 +73,7 @@ import { Provider } from "react-redux";
 import store from "../client/store";
 import PersistWrapper from 'next-persist/src/NextPersistWrapper';
 
-const config = {
+const npConfig = {
   method: 'localStorage'
   allowList: {
     reducerOne: ['stateItemOne', 'stateItemTwo'],
@@ -83,7 +83,7 @@ const config = {
 const MyApp = ({ Component, pageProps }) => {
   return (
     <Provider store={store}>
-      <PersistWrapper wrapperConfig={config}>
+      <PersistWrapper wrapperConfig={npConfig}>
         <Component {...pageProps} />
       </PersistWrapper>
     </Provider>
