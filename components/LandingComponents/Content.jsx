@@ -71,7 +71,7 @@ const implementation = {
     code: `// _app.js
 import { Provider } from "react-redux";
 import store from "../client/store";
-import PersistWrapper from 'next-persist/src/NextPersistWrapper';
+import PersistWrapper from 'next-persist/lib/NextPersistWrapper';
 
 const npConfig = {
   method: 'localStorage'
