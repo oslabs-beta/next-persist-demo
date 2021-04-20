@@ -1,6 +1,6 @@
 import { Provider } from 'react-redux';
 import Head from 'next/head';
-import PersistWrapper from 'next-persist/src/NextPersistWrapper';
+import PersistWrapper from 'next-persist/lib/NextPersistWrapper';
 import { getCookieProps } from 'next-persist';
 
 import '../styles/globals.css';
