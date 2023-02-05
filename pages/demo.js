@@ -14,9 +14,7 @@ export default function demo() {
         Refresh or navigate away from the page and your state will be retained!
       </p>
       <DemoContainer />
-      <Link href="/">
-        <a className={styles.backButton}>Back to Home</a>
-      </Link>
+      <Link href="/" className={styles.backButton}>Back to Home</Link>
     </div>
   );
 }
