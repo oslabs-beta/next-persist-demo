@@ -9,8 +9,6 @@ export default function DemoContainer() {
   const {
     counter,
     lightStatus,
-    initialTime,
-    currentTime,
     username,
     userIcon,
   } = useSelector((state) => state.demo);
@@ -26,24 +24,16 @@ export default function DemoContainer() {
   return (
     <div className={styles.demoContainer}>
       <Link href="/userinfo">
-        <a>
-          <UserInfo username={username} userIcon={userIcon} />
-        </a>
+        <UserInfo username={username} userIcon={userIcon} />
       </Link>
       <Link href="/counter">
-        <a>
-          <Counter counter={counter} />
-        </a>
+        <Counter counter={counter} />
       </Link>
       <Link href="/timer">
-        <a>
-          <Timer />
-        </a>
+        <Timer />
       </Link>
       <Link href="/lightswitch">
-        <a>
-          <LightSwitch lightStatus={lightStatus} />
-        </a>
+        <LightSwitch lightStatus={lightStatus} />
       </Link>
     </div>
   );

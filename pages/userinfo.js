@@ -81,9 +81,7 @@ export default function userinfo() {
           </Select>
         </div>
       </div>
-      <Link href="/demo">
-        <a className={styles.backButton}>Back to Demo</a>
-      </Link>
+      <Link href="/demo" className={styles.backButton}>Back to Demo</Link>
     </div>
   );
 }
