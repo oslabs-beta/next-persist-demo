@@ -26,7 +26,7 @@ export default function Content() {
       </div>
       <div className={styles.teamContainer}>
         <div className={styles.teamHeader}>
-          <h1 className={styles.teamHeaderText}>The team behind most.js</h1>
+          <h1 className={styles.teamHeaderText}>The team behind next-persist</h1>
         </div>
         <div className={styles.teamInfo}>
           <Team team={team.brian} />

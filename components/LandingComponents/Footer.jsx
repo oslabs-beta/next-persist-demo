@@ -14,7 +14,7 @@ export default function Footer() {
             height={50}
             width={200}
           />
-          <p>A node module by most.js</p>
+          <p>A node module made with love.</p>
         </div>
         <div className={styles.footerLinks}>
           <Link href="https://github.com/oslabs-beta/next-persist">

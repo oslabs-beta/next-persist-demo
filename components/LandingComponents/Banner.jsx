@@ -14,7 +14,7 @@ export default function Banner() {
           width={800}
         />
       <div className={styles.bannerTextContainer}>
-        <div className={styles.bannerH1Text}>A Node module by most.js</div>
+        <div className={styles.bannerH1Text}>A Node module made with love.</div>
         <div className={styles.bannerPText}>Bridging the gap between client-side persistence and server-side rendering.</div>
           <Link href="/demo">
             <button className={styles.bannerButton}>Demo</button>
