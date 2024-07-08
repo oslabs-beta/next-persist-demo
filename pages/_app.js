@@ -19,7 +19,7 @@ export default function MyApp({ Component, pageProps }) {
     <Provider store={store}>
       <PersistWrapper wrapperConfig={config}>
         <Head>
-          <title>next-persist - A node module by most.js</title>
+          <title>next-persist - A node module made with love.</title>
         </Head>
         <LogoWrapper>
           <Component {...pageProps} />

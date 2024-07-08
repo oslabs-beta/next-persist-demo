@@ -7,7 +7,7 @@ export default function Header() {
     <div className={styles.headerContainer}>
       <div className={styles.headerNav}>
         <div className={styles.logo}>
-          <a href='https://mostjs.org'>most.js</a>
+          <a href='https://www.npmjs.com/package/next-persist'>next-persist</a>
         </div>
       <div className={styles.navigation}>
         <a className={styles.navLinks} href='https://github.com/oslabs-beta/next-persist'>Github</a>
